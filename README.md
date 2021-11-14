@@ -5,7 +5,7 @@
 		alt="js"
 		src="https://3con14.biz/js/_data/_config/js.png">
 <p>
-#### Proyecto realizado durante el curso de 4geeks.
+### Proyecto realizado durante el curso de 4geeks.
 
 Proyecto que reune la realización de las siguientes funciones en JS:
 1. Funcion que encuentre el valor 4 en el array exampleArray con programación imperativa y declarativa
