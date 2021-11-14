@@ -149,16 +149,16 @@ function compareArr(arr1, arr2) {
     if(array1.length == array2.length){
         res = compareValue(array1,array2)
         res[1]==='true' ? console.log('Mismo tamaño y mismo contenido') : console.log(`Mismo tamaño y mismo contenido hasta ${res[0].length}`)
-        return res[0]
+        return compareValue(array1,array2)
     }else {
         if (array1.length > array2.length){
             res = compareValue(array2,array1)
             res[1]==='true' ? console.log('Distinto tamaño y mismo contenido') : console.log(`Distinto tamaño y mismo contenido hasta ${res[0].length}`)
-            return res[0]
+            return compareValue(array2,array1)
         } else {
             res = compareValue(array1,array2)
             res[1]==='true' ? console.log('Distinto tamaño y mismo contenido') : console.log(`Distinto tamaño y mismo contenido hasta ${res[0].length}`)
-            return res[0]
+            return compareValue(array1,array2)
         }
     }
 }
