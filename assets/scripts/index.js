@@ -1,6 +1,6 @@
 // example data
 const exampleArray = [10, 4, 100, 35, 31, 23, 443, 221, 342, 10, 12,42];
-const exampleArray3 = [10, 4, 100, 35, 31, 23, 443, 221, 342, 10, 12 , 42];
+// const exampleArray3 = [10, 4, 100, 35, 31, 23, 443, 221, 342, 10];
 const shit = ["function", null, function() {}, () => {}, 10, 100, {}];
 const exampleArray2 = [[10, 4, "100", 35, "31", "23", 443, "221", "342", 10, 12, 42]]
 //Funciones para encontrar el valor en el array
@@ -134,32 +134,22 @@ function compareValue (arr,arr2){
     let comparasao = []
     let i=0;
     let flag = true;
+    compareLength(arr,arr2)
     while (i < arr.length && flag==true){
         if(!arr2.includes(arr[i])) flag = false;
         else comparasao.push(arr.includes(arr2[i]));
         i++;
     }
-    return [comparasao, flag]
+    flag == true ? console.log('Mismo contenido') : console.log (`Mismo contenido hasta ${comparasao.length}`)
+    return comparasao
+}
+function compareLength (arr,arr2) {
+    arr.length === arr2.length ? console.log('Mismo tamaño') : console.log('Distinto tamaño')
 }
 //Funcion para comparar los arrays
 function compareArr(arr1, arr2) {
     let array1 = reloadMatrix(arr1);
     let array2 = reloadMatrix(arr2);
-    let res = [];
-    if(array1.length == array2.length){
-        res = compareValue(array1,array2)
-        res[1]==='true' ? console.log('Mismo tamaño y mismo contenido') : console.log(`Mismo tamaño y mismo contenido hasta ${res[0].length}`)
-        return compareValue(array1,array2)
-    }else {
-        if (array1.length > array2.length){
-            res = compareValue(array2,array1)
-            res[1]==='true' ? console.log('Distinto tamaño y mismo contenido') : console.log(`Distinto tamaño y mismo contenido hasta ${res[0].length}`)
-            return compareValue(array2,array1)
-        } else {
-            res = compareValue(array1,array2)
-            res[1]==='true' ? console.log('Distinto tamaño y mismo contenido') : console.log(`Distinto tamaño y mismo contenido hasta ${res[0].length}`)
-            return compareValue(array1,array2)
-        }
-    }
+    return compareValue(array1,array2)
 }
 console.log(compareArr(exampleArray,exampleArray2))
